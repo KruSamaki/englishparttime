@@ -1,0 +1,34 @@
+/* Font definitions */
+@font-face {
+    font-family: 'title';
+    src: url('fonts/Khmer\ OS\ Muol\ Light\ Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'khmercontent';
+    src: url('fonts/Khmer\ OS\ Battambang\ Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    font-family: 'khmercontent';
+}
+hr{
+    height: 4px;
+    background-color: black;
+    border-color: black;
+    margin: 0px 20px;
+}
+h3{
+    font-size: 25px;
+    font-family: 'title';
+    font-weight: normal;
+    text-align: center;
+}
+p{
+    font-size: 25px;
+}
+span{
+    font-family: 'title';
+}

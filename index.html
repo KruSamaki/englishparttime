@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>English part time class</title>
+    <style>
+        /* General styles */
+        *{
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Form styles */
+        form {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            input[type="text"] {
+                font-size: 16px;
+            }
+
+            button {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form id="myForm">
+        <input type="text" id="startDate" placeholder="Input Start Date">
+        <input type="text" id="endDate" placeholder="Input End Date">
+        <input type="text" id="payagain" placeholder="Pay again">
+        <button type="submit">Submit</button>
+    </form>
+    <div class="container">
+        <h3>វិក្កយបត្របង់ប្រាក់សិក្សា<br>Tuition Receipt</h3>
+        <hr>
+        <p>សិស្សឈ្មោះ <span>ចាន់ ដាណៃ</span>- CHAN DANAI</p>
+        <p>កាលបរិច្ឆេទបង់ប្រាក់: <span id="payDate"></span></p>
+        <p>ទឹកប្រាក់ត្រូវបង់៖ <span>១៦,០០០រៀល</span> សម្រាប់សិក្សាមួយខែពេញ</p>
+        <p>គិតចាប់ពីថ្ងៃទី: <span style="font-family: 'khmercontent';" id="startDateDisplay"></span></p>
+        <p>ដល់ថ្ងៃទី: <span style="font-family: 'khmercontent';" id="endDateDisplay"></span></p>
+        <p>ចំណាំ៖ ត្រូវបង់ម្ដងទៀតនៅថ្ងៃទី <span style="font-family: 'khmercontent';" id="payagainDisplay"></span></p>
+        <p><span>បញ្ជាក់៖</span> សិស្សកំពុងសិក្សាថ្នាក់មូលដ្ឋានគ្រឹះភាសាអង់គ្លេសកម្រិតដំបូង លើសៀវភៅ Smart Start 2។</p><br>
+        <hr>
+        <p>📞Tel: 087 41 88 98</p>
+        <p>🗺️ភូមិស៊ុង១ ឃុំស៊ុង ស្រុកសំឡូត ខេត្តបាត់ដំបង។</p>
+    </div>
+    <div class="container">
+        <h3>វិក្កយបត្របង់ប្រាក់សិក្សា<br>Tuition Receipt</h3>
+        <hr>
+        <p>សិស្សឈ្មោះ <span>សើ ឌីណា</span>- SEUR DYNA</p>
+        <p>កាលបរិច្ឆេទបង់ប្រាក់: <span id="payDate"></span></p>
+        <p>ទឹកប្រាក់ត្រូវបង់៖ <span>១៦,០០០រៀល</span> សម្រាប់សិក្សាមួយខែពេញ</p>
+        <p>គិតចាប់ពីថ្ងៃទី: <span style="font-family: 'khmercontent';" id="startDateDisplay"></span></p>
+        <p>ដល់ថ្ងៃទី: <span style="font-family: 'khmercontent';" id="endDateDisplay"></span></p>
+        <p>ចំណាំ៖ ត្រូវបង់ម្ដងទៀតនៅថ្ងៃទី <span style="font-family: 'khmercontent';" id="payagainDisplay"></span></p>
+        <p><span>បញ្ជាក់៖</span> សិស្សកំពុងសិក្សាថ្នាក់មូលដ្ឋានគ្រឹះភាសាអង់គ្លេសកម្រិតដំបូង លើសៀវភៅ Smart Start 2។</p><br>
+        <hr>
+        <p>📞Tel: 087 41 88 98</p>
+        <p>🗺️ភូមិស៊ុង១ ឃុំស៊ុង ស្រុកសំឡូត ខេត្តបាត់ដំបង។</p>
+    </div>
+    <div class="container">
+        <h3>វិក្កយបត្របង់ប្រាក់សិក្សា<br>Tuition Receipt</h3>
+        <hr>
+        <p>សិស្សឈ្មោះ <span>ជួង ណាផា</span>- CHOUNG NAPHA</p>
+        <p>កាលបរិច្ឆេទបង់ប្រាក់: <span id="payDate"></span></p>
+        <p>ទឹកប្រាក់ត្រូវបង់៖ <span>១៦,០០០រៀល</span> សម្រាប់សិក្សាមួយខែពេញ</p>
+        <p>គិតចាប់ពីថ្ងៃទី: <span style="font-family: 'khmercontent';" id="startDateDisplay"></span></p>
+        <p>ដល់ថ្ងៃទី: <span style="font-family: 'khmercontent';" id="endDateDisplay"></span></p>
+        <p>ចំណាំ៖ ត្រូវបង់ម្ដងទៀតនៅថ្ងៃទី <span style="font-family: 'khmercontent';" id="payagainDisplay"></span></p>
+        <p><span>បញ្ជាក់៖</span> សិស្សកំពុងសិក្សាថ្នាក់មូលដ្ឋានគ្រឹះភាសាអង់គ្លេសកម្រិតដំបូង លើសៀវភៅ Smart Start 2។</p><br>
+        <hr>
+        <p>📞Tel: 087 41 88 98</p>
+        <p>🗺️ភូមិស៊ុង១ ឃុំស៊ុង ស្រុកសំឡូត ខេត្តបាត់ដំបង។</p>
+    </div>
+    <div class="container">
+        <h3>វិក្កយបត្របង់ប្រាក់សិក្សា<br>Tuition Receipt</h3>
+        <hr>
+        <p>សិស្សឈ្មោះ <span>ហ៊ត លីដា</span>- HOUT LYDA</p>
+        <p>កាលបរិច្ឆេទបង់ប្រាក់: <span id="payDate"></span></p>
+        <p>ទឹកប្រាក់ត្រូវបង់៖ <span>១៦,០០០រៀល</span> សម្រាប់សិក្សាមួយខែពេញ</p>
+        <p>គិតចាប់ពីថ្ងៃទី: <span style="font-family: 'khmercontent';" id="startDateDisplay"></span></p>
+        <p>ដល់ថ្ងៃទី: <span style="font-family: 'khmercontent';" id="endDateDisplay"></span></p>
+        <p>ចំណាំ៖ ត្រូវបង់ម្ដងទៀតនៅថ្ងៃទី <span style="font-family: 'khmercontent';" id="payagainDisplay"></span></p>
+        <p><span>បញ្ជាក់៖</span> សិស្សកំពុងសិក្សាថ្នាក់មូលដ្ឋានគ្រឹះភាសាអង់គ្លេសកម្រិតដំបូង លើសៀវភៅ Smart Start 2។</p><br>
+        <hr>
+        <p>📞Tel: 087 41 88 98</p>
+        <p>🗺️ភូមិស៊ុង១ ឃុំស៊ុង ស្រុកសំឡូត ខេត្តបាត់ដំបង។</p>
+    </div>
+
+    <div class="container">
+        <h3>វិក្កយបត្របង់ប្រាក់សិក្សា<br>Tuition Receipt</h3>
+        <hr>
+        <p>សិស្សឈ្មោះ <span>បូ ឌីណា</span>-​ BO DYNA</p>
+        <p>កាលបរិច្ឆេទបង់ប្រាក់: <span id="payDate"></span></p>
+        <p>ទឹកប្រាក់ត្រូវបង់៖ <span>១៦,០០០រៀល</span> សម្រាប់សិក្សាមួយខែពេញ</p>
+        <p>គិតចាប់ពីថ្ងៃទី: <span style="font-family: 'khmercontent';" id="startDateDisplay"></span></p>
+        <p>ដល់ថ្ងៃទី: <span style="font-family: 'khmercontent';" id="endDateDisplay"></span></p>
+        <p>ចំណាំ៖ ត្រូវបង់ម្ដងទៀតនៅថ្ងៃទី <span style="font-family: 'khmercontent';" id="payagainDisplay"></span></p>
+        <p><span>បញ្ជាក់៖</span> សិស្សកំពុងសិក្សាថ្នាក់មូលដ្ឋានគ្រឹះភាសាអង់គ្លេសកម្រិតដំបូង លើសៀវភៅ Smart Start 2។</p><br>
+        <hr>
+        <p>📞Tel: 087 41 88 98</p>
+        <p>🗺️ភូមិស៊ុង១ ឃុំស៊ុង ស្រុកសំឡូត ខេត្តបាត់ដំបង។</p>
+    </div>
+
+
+    <script>
+        const form = document.getElementById('myForm');
+
+        // Get the current date in the format "dd/mm/yyyy"
+        const today = new Date().toLocaleDateString('en-GB');
+
+        // Get the current time in the format "hh:mm:ss"
+        const currentTime = new Date().toLocaleTimeString('en-GB');
+
+        // Display the current date and time
+        document.getElementById('payDate').textContent = `${today} - ${currentTime}`;
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+            const payagain = document.getElementById('payagain').value;
+
+            document.getElementById('startDateDisplay').textContent = startDate;
+            document.getElementById('endDateDisplay').textContent = endDate;
+            document.getElementById('payagainDisplay').textContent=payagain;
+        });
+    </script>
+</body>
+</html>
