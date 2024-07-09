@@ -34,7 +34,7 @@ h3{
     text-align: center;
 }
 p{
-    font-size: 15px;
+    font-size: 20px;
 }
 span{
     font-family: 'title';
@@ -79,7 +79,7 @@ span{
         const minutes = String(now.getMinutes()).padStart(2, '0');
         const seconds = String(now.getSeconds()).padStart(2, '0');
 
-        return `${day}/${month}/${year} - ${hours}:${minutes}:${seconds}`;
+        return `${day}/${month}/${year} ម៉ោង ${hours}:${minutes}នាទី:${seconds}វិនាទី`;
     }
 
     function createStudentContainer(student) {
@@ -88,8 +88,8 @@ span{
             <div class="container" style="text-align:center;">
                 <h3>វិក្កយបត្របង់ប្រាក់សិក្សា<br>Tuition Receipt<br>សម្រាប់ខែមិថុនា</h3>
                 <hr>
-                <p>សិស្សឈ្មោះ <span>${student[0]}</span> - ${student[1]}</p>
-                <p>កាលបរិច្ឆេទបានបង់ប្រាក់:<b> ${paydate}</b></p>
+                <p>សិស្សឈ្មោះ<br> <span>${student[0]}</span> - ${student[1]}</p>
+                <p>កាលបរិច្ឆេទបានបង់ប្រាក់<br><b> ${paydate}</b></p>
                 <p>ទឹកប្រាក់ត្រូវបង់៖ <b>${student[2]} រៀល</b> សម្រាប់សិក្សាមួយខែមិថុនា</p>
                 <p>គិតចាប់ពីថ្ងៃទី:<b> ${student[3]}</b></p>
                 <p>ដល់ថ្ងៃទី: <b>${student[4]}</b></p>
