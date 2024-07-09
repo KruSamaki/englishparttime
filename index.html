@@ -3,16 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Tuition Receipt</title>
     <style>
+        /* Font definitions */
+@font-face {
+    font-family: 'title';
+    src: url('fonts/Khmer\ OS\ Muol\ Light\ Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'khmercontent';
+    src: url('fonts/Khmer\ OS\ Battambang\ Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    font-family: 'khmercontent';
+}
+hr{
+    height: 4px;
+    background-color: black;
+    border-color: black;
+    margin: 0px 20px;
+}
+h3{
+    font-size: 25px;
+    font-family: 'title';
+    font-weight: normal;
+    text-align: center;
+}
+p{
+    font-size: 15px;
+}
+span{
+    font-family: 'title';
+}
+
         .container {
             border: 1px solid #ddd;
             padding: 10px;
-            margin: 5px 0;
         }
         hr {
-            margin: 6px 0;
+            margin: 2px 0;
         }
     </style>
 </head>
@@ -52,19 +85,19 @@
     function createStudentContainer(student) {
         const paydate = getCurrentDateTime();
         return `
-            <div class="container">
-                <h3>វិក្កយបត្របង់ប្រាក់សិក្សា<br>Tuition Receipt</h3>
+            <div class="container" style="text-align:center;">
+                <h3>វិក្កយបត្របង់ប្រាក់សិក្សា<br>Tuition Receipt<br>សម្រាប់ខែមិថុនា</h3>
                 <hr>
                 <p>សិស្សឈ្មោះ <span>${student[0]}</span> - ${student[1]}</p>
-                <p>កាលបរិច្ឆេទបានបង់ប្រាក់: ${paydate}</p>
-                <p>ទឹកប្រាក់ត្រូវបង់៖ <span>${student[2]} រៀល</span> សម្រាប់សិក្សាមួយខែមិថុនា</p>
-                <p>គិតចាប់ពីថ្ងៃទី: ${student[3]}</p>
-                <p>ដល់ថ្ងៃទី: ${student[4]}</p>
-                <p>ចំណាំ៖ ត្រូវបង់ម្ដងទៀតសម្រាប់ខែកក្កដានៅថ្ងៃទី ${student[5]} ផុតកំណត់បង់ប្រាក់ ${student[6]}</p>
+                <p>កាលបរិច្ឆេទបានបង់ប្រាក់:<b> ${paydate}</b></p>
+                <p>ទឹកប្រាក់ត្រូវបង់៖ <b>${student[2]} រៀល</b> សម្រាប់សិក្សាមួយខែមិថុនា</p>
+                <p>គិតចាប់ពីថ្ងៃទី:<b> ${student[3]}</b></p>
+                <p>ដល់ថ្ងៃទី: <b>${student[4]}</b></p>
+                <p>ចំណាំ៖ ត្រូវបង់ម្ដងទៀតសម្រាប់ខែកក្កដា<br>នៅថ្ងៃទី<b> ${student[5]} </b><br>ផុតកំណត់បង់ប្រាក់<b> ${student[6]}</b></p>
                 <p><span>បញ្ជាក់៖</span> សិស្សកំពុងសិក្សាថ្នាក់មូលដ្ឋានគ្រឹះភាសាអង់គ្លេសកម្រិតដំបូង លើសៀវភៅ Super Kid 2។</p>
                 <hr>
-                <p>📞Tel: 087 41 88 98</p>
-                <p>🗺️ភូមិស៊ុង១ ឃុំស៊ុង ស្រុកសំឡូត ខេត្តបាត់ដំបង។</p>
+                <p>📞Tel: 087 41 88 98<br>
+                🗺️ភូមិស៊ុង១ ឃុំស៊ុង ស្រុកសំឡូត ខេត្តបាត់ដំបង។</p>
             </div>
         `;
     }
