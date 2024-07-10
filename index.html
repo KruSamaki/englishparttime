@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tuition Receipt</title>
     <style>
+        /* Font definitions */
         @font-face {
-    font-family: 'khmercontent';
-    src: url('fonts/Khmer\ OS\ Battambang\ Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-body{
-    font-family: 'khmercontent';
-}
+            font-family: 'title';
+            src: url('fonts/Khmer\ OS\ Muol\ Light\ Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'khmercontent';
+            src: url('fonts/Khmer\ OS\ Battambang\ Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'khmercontent';
+
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
         .container {
             width: 100%;
             /* max-width: 58mm; */
@@ -24,62 +40,83 @@ body{
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             box-sizing: border-box;
         }
-        h1, h2 {
+
+        h1,
+        h2 {
             text-align: center;
             font-size: 14px;
             margin: 5px 0;
         }
-        .header, .footer {
+
+        .header,
+        .footer {
             text-align: center;
             margin-bottom: 10px;
         }
+
         p {
             font-size: 12px;
             margin: 5px 0;
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 10px;
             font-size: 12px;
         }
-        table, th, td {
+
+        table,
+        th,
+        td {
             border: 1px solid black;
         }
-        th, td {
+
+        th,
+        td {
             padding: 4px;
             text-align: left;
         }
+
         th {
             background-color: #f2f2f2;
         }
+
         @media (max-width: 480px) {
             .container {
                 width: 100%;
                 margin: 5px;
                 padding: 5px;
             }
-            h1, h2 {
+
+            h1,
+            h2 {
                 font-size: 20px;
             }
-            p, table {
+
+            p,
+            table {
                 font-size: 18px;
             }
-            th, td {
+
+            th,
+            td {
                 padding: 2px;
             }
         }
-        hr{
+
+        hr {
             height: 2px;
             background-color: black;
             border-color: black;
         }
     </style>
 </head>
+
 <body>
     <script>
         const students = [
-        ['ជួង ណាផា', 'CHOUNG NAPHA', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024', '25-កក្កដា-2024'],
+            ['ជួង ណាផា', 'CHOUNG NAPHA', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024', '25-កក្កដា-2024'],
             ['ហ៊ត លីដា', 'HUAT LIDA', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024', '30-កក្កដា-2024'],
             ['បូ ឌីណា', 'BO DINA', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024', '30-កក្កដា-2024'],
             ['ឆុំ ស្រីនិត', 'CHHUM SREYNITH', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024', '30-កក្កដា-2024'],
@@ -123,8 +160,9 @@ body{
                         <hr>
                     </div>
                     <h2>Tuition Receipt</h2>
+                    <h2>for June-មិថុនា</h2>
                     <p><strong>Date:</strong> ${currentDateTime}</p>
-                    <p><strong>Student Name:</strong> ${enName} (${khName})</p>
+                    <p><strong>Student Name:</strong> ${enName}<br><div style="font-size:24px">(${khName})</div></p>
                     <table>
                         <tr>
                             <th>Description</th>
@@ -162,4 +200,5 @@ body{
         });
     </script>
 </body>
+
 </html>
