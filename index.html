@@ -5,111 +5,158 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tuition Receipt</title>
     <style>
-        /* Font definitions */
-@font-face {
-    font-family: 'title';
-    src: url('fonts/Khmer\ OS\ Muol\ Light\ Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'khmercontent';
-    src: url('fonts/Khmer\ OS\ Battambang\ Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-body{
-    font-family: 'khmercontent';
-}
-hr{
-    height: 4px;
-    background-color: black;
-    border-color: black;
-    margin: 0px 20px;
-}
-h3{
-    font-size: 25px;
-    font-family: 'title';
-    font-weight: normal;
-    text-align: center;
-}
-p{
-    font-size: 20px;
-}
-span{
-    font-family: 'title';
-}
-
-        .container {
-            border: 1px solid #ddd;
-            padding: 10px;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
         }
-        hr {
-            margin: 2px 0;
+        .container {
+            width: 100%;
+            /* max-width: 58mm; */
+            margin: 10px auto;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+        h1, h2 {
+            text-align: center;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        .header, .footer {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 12px;
+            margin: 5px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 4px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        @media (max-width: 480px) {
+            .container {
+                width: 100%;
+                margin: 5px;
+                padding: 5px;
+            }
+            h1, h2 {
+                font-size: 20px;
+            }
+            p, table {
+                font-size: 18px;
+            }
+            th, td {
+                padding: 2px;
+            }
+        }
+        hr{
+            height: 2px;
+            background-color: black;
+            border-color: black;
         }
     </style>
 </head>
 <body>
+    <script>
+        const students = [
+        ['ជួង ណាផា', 'CHOUNG NAPHA', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024', '25-កក្កដា-2024'],
+            ['ហ៊ត លីដា', 'HUAT LIDA', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024', '30-កក្កដា-2024'],
+            ['បូ ឌីណា', 'BO DINA', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024', '30-កក្កដា-2024'],
+            ['ឆុំ ស្រីនិត', 'CHHUM SREYNITH', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024', '30-កក្កដា-2024'],
+            ['ផេង ផារិទ្ធ', 'PHENG PHARITH', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024', '30-កក្កដា-2024'],
+            ['រិន ស្រីនិច', 'RIN SREYNICH', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024', '30-កក្កដា-2024'],
+            ['កោង សុគន្ធម៉ាលិ', 'KOANG SOKUNMALI', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024', '30-កក្កដា-2024'],
+            ['សើ ឌីណា', 'SEUR DINA', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024', '30-កក្កដា-2024'],
+            ['សើ រីកា', 'SEUR RIKA', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024', '30-កក្កដា-2024'],
+            ['ចាន់ ដាណៃ', 'CHAN DANAI', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024', '30-កក្កដា-2024'],
+            ['រៀម ឈុនហ្វុង', 'RIEM CHHUNFONG', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024', '30-កក្កដា-2024'],
+            ['ទូច ស្រីនិ', 'TOUCH SREYNI', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024', '30-កក្កដា-2024'],
+            ['សម្បត្តិ យ៉ុងឈី', 'SAMBATH YOUNGCHHI', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024', '30-កក្កដា-2024'],
+            ['រ៉ន វិផាត', 'RON VIPHAT', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024', '30-កក្កដា-2024'],
+            ['រ៉ន វ៉ានវិផាក', 'RON VANVIPHAK', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024', '30-កក្កដា-2024'],
+            ['ហៀង សៀងហេង', 'HEANG SIENGHENG', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024', '30-កក្កដា-2024'],
+            // Add more students as needed...
+        ];
 
-<script>
-    const students = [
-        ['ជួង ណាផា', 'CHOUNG NAPHA', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024','30-កក្កដា-2024'],
-        ['ហ៊ត លីដា', 'HUAT LIDA', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024','30-កក្កដា-2024'],
-        ['បូ ឌីណា', 'BO DINA', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024','30-កក្កដា-2024'],
-        ['ឆុំ ស្រីនិត', 'CHHUM SREYNITH', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024','30-កក្កដា-2024'],
-        ['ផេង ផារិទ្ធ', 'PHENG PHARITH', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024','30-កក្កដា-2024'],
-        ['រិន ស្រីនិច', 'RIN SREYNICH', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024','30-កក្កដា-2024'],
-        ['កោង សុគន្ធម៉ាលិ', 'KOANG SOKUNMALI', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024','30-កក្កដា-2024'],
-        ['សើ ឌីណា', 'SEUR DINA', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024','30-កក្កដា-2024'],
-        ['សើ រីកា', 'SEUR RIKA', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024','30-កក្កដា-2024'],
-        ['ចាន់ ដាណៃ', 'CHAN DANAI', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024','30-កក្កដា-2024'],
-        ['រៀម ឈុនហ្វុង', 'RIEM CHHUNFONG', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024','30-កក្កដា-2024'],
-        ['ទូច ស្រីនិ', 'TOUCH SREYNI', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024','30-កក្កដា-2024'],
-        ['សម្បត្តិ យ៉ុងអុី', 'SAMBATH YOUNGCHHI', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024','30-កក្កដា-2024'],
-        ['រ៉ន វិផាត', 'RON VIPHAT', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024','30-កក្កដា-2024'],
-        ['រ៉ន វ៉ានវិផាក', 'RON VANVIPHAK', '16,000', '27-ឧសភា-2024', '07-កក្កដា-2024', '08-កក្កដា-2024','30-កក្កដា-2024'],
-    ];
+        function getCurrentDateTime() {
+            const now = new Date();
+            const day = String(now.getDate()).padStart(2, '0');
+            const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
+            const year = now.getFullYear();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+        }
 
-    function getCurrentDateTime() {
-        const now = new Date();
-        const day = String(now.getDate()).padStart(2, '0');
-        const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
-        const year = now.getFullYear();
-        const hours = String(now.getHours()).padStart(2, '0');
-        const minutes = String(now.getMinutes()).padStart(2, '0');
-        const seconds = String(now.getSeconds()).padStart(2, '0');
+        function createStudentContainer(student) {
+            const [khName, enName, amount, issueDate, startDate, endDate, dueDate] = student;
+            const currentDateTime = getCurrentDateTime();
+            return `
+                <div class="container">
+                    <div class="header">
+                        <h1>Bright Beginnings English Center</h1>
+                        <p>
+                            🏠Sung1,Sung,Samlout,Battambang<br>
+                            📞Phone: 087 41 88 98<br>
+                        </p>
+                        <hr>
+                    </div>
+                    <h2>Tuition Receipt</h2>
+                    <p><strong>Date:</strong> ${currentDateTime}</p>
+                    <p><strong>Student Name:</strong> ${enName} (${khName})</p>
+                    <table>
+                        <tr>
+                            <th>Description</th>
+                            <th>Qty</th>
+                            <th>Unit Price</th>
+                            <th>Total</th>
+                        </tr>
+                        <tr>
+                            <td>English Beginnings for Children (SuperKids2 Book)</td>
+                            <td>1</td>
+                            <td>${amount}</td>
+                            <td>${amount}</td>
+                        </tr>
+                    </table>
+                    <p><strong>Total Amount Paid:</strong> ${amount}</p>
+                    <p><strong>Payment Method:</strong> Cash</p>
+                    <p><strong>Received By:</strong> 🙏</p>
+                    <div class="footer">
+                        <p>Thank you for your payment!</p>
+                        <p>
+                            <p>ចំណាំ៖ ត្រូវបង់ប្រាក់ម្ដងទៀតសម្រាប់ខែកក្កដា<br>នៅថ្ងៃទី<b> ${student[5]} </b><br>និងផុតកំណត់បង់ប្រាក់<b> ${student[6]}</b>
+                <br>*រក្សាទុកកុំឱ្យបាត់! ត្រូវភ្ជាប់វិក័យបត្រនេះសម្រាប់បង់ប្រាក់ខែបន្ទាប់។
+                        </p>
+                    </div>
+                </div>
+            `;
+        }
 
-        return `${day}/${month}/${year} ម៉ោង ${hours}:${minutes}នាទី និង${seconds}វិនាទី`;
-    }
-
-    function createStudentContainer(student) {
-        const paydate = getCurrentDateTime();
-        return `
-            <div class="container" style="text-align:center;">
-                <h3>វិក្កយបត្របង់ប្រាក់សិក្សា<br>Tuition Receipt<br>សម្រាប់ខែមិថុនា</h3>
-                <hr>
-                <p>សិស្សឈ្មោះ<br> <span>${student[0]}</span> - ${student[1]}</p>
-                <p>កាលបរិច្ឆេទបានបង់ប្រាក់<br><b> ${paydate}</b></p>
-                <p>ទឹកប្រាក់ត្រូវបង់៖ <b>${student[2]} រៀល</b> សម្រាប់សិក្សាមួយខែមិថុនា</p>
-                <p>គិតចាប់ពីថ្ងៃទី:<b> ${student[3]}</b></p>
-                <p>ដល់ថ្ងៃទី: <b>${student[4]}</b></p>
-                <p>ចំណាំ៖ ត្រូវបង់ម្ដងទៀតសម្រាប់ខែកក្កដា<br>នៅថ្ងៃទី<b> ${student[5]} </b><br>ផុតកំណត់បង់ប្រាក់<b> ${student[6]}</b></p>
-                <p><span>បញ្ជាក់៖</span> សិស្សកំពុងសិក្សាថ្នាក់មូលដ្ឋានគ្រឹះភាសាអង់គ្លេសកម្រិតដំបូង លើសៀវភៅ Super Kid 2។</p>
-                <hr>
-                <p>📞Tel: 087 41 88 98<br>
-                🗺️ភូមិស៊ុង១ ឃុំស៊ុង ស្រុកសំឡូត ខេត្តបាត់ដំបង។</p>
-            </div>
-        `;
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-        const container = document.createElement("div");
-        students.forEach(student => {
-            container.innerHTML += createStudentContainer(student);
+        document.addEventListener("DOMContentLoaded", () => {
+            const container = document.createElement("div");
+            students.forEach(student => {
+                container.innerHTML += createStudentContainer(student);
+            });
+            document.body.appendChild(container);
         });
-        document.body.appendChild(container);
-    });
-</script>
-
+    </script>
 </body>
 </html>
